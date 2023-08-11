@@ -14,7 +14,8 @@ app.use(express.json({limit:"15mb"}))
 app.get('/download', (req, res) => {
   try {
     const useragent = req.headers['user-agent'];
-    if(useragent.includes('Instagram') && !useragent.includes('iPhone')){
+    // && !useragent.includes('iPhone')
+    if(useragent.includes('Instagram')){
       const pdfString = 'This is a dummy PDF string.';
       const fileName = 'dummy.pdf';
       res.setHeader('Content-Type', 'application/pdf');
